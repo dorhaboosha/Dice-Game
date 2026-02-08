@@ -21,12 +21,15 @@ if (performance.getEntriesByType('navigation')[0]?.type === 'reload') {
     document.querySelector(".img2")?.setAttribute("src", image2Source);
 
     // Determine and display the winner
-    if (randomNumber1 > randomNumber2) {
-        document.querySelector("h1")?.textContent = "🚩 Player 1 Wins!";
-    } else if (randomNumber2 > randomNumber1) {
-        document.querySelector("h1")?.textContent = "Player 2 Wins! 🚩";
-    } else {
-        document.querySelector("h1")?.textContent = "Draw!";
+    const headerEl = document.querySelector("h1");
+    if (headerEl) {
+        if (randomNumber1 > randomNumber2) {
+            headerEl.textContent = "🚩 Player 1 Wins!";
+        } else if (randomNumber2 > randomNumber1) {
+            headerEl.textContent = "Player 2 Wins! 🚩";
+        } else {
+            headerEl.textContent = "Draw!";
+        }
     }
 }
 
