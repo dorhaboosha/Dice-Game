@@ -1,31 +1,47 @@
 <!DOCTYPE html>
+<!--
+  Dice Game — landing page
+  Two players roll dice on refresh; face images and winner text are updated by index.js.
+  Assets: ./images/dice1.png … dice6.png, ./styles.css, ./index.js
+-->
 <html lang="en" dir="ltr">
   <head>
+    <!-- Site icon shown in browser tabs -->
     <link rel="icon" type="image/png" href="./images/dice.png" />
+
     <meta charset="utf-8" />
     <title>Dice</title>
+
+    <!-- App layout and dice styling -->
     <link rel="stylesheet" href="styles.css" />
+
+    <!-- Display fonts: headings vs. player labels (see styles.css for usage) -->
     <link
       href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster"
       rel="stylesheet"
     />
   </head>
   <body>
+    <!-- Main content: title + both dice; centered via .container in CSS -->
     <div class="container">
       <h1>Refresh Me</h1>
 
+      <!-- Player 1: .img1 is the dice image index.js swaps on load -->
       <div class="dice">
         <p>Player 1</p>
-        <img class="img1" src="./images/dice6.png" />
+        <img class="img1" src="./images/dice6.png" alt="Player 1 dice" />
       </div>
 
+      <!-- Player 2: .img2 is the second dice image -->
       <div class="dice">
         <p>Player 2</p>
-        <img class="img2" src="./images/dice6.png" />
+        <img class="img2" src="./images/dice6.png" alt="Player 2 dice" />
       </div>
     </div>
 
     <footer>www 🎲 App Brewery 🎲 com</footer>
+
+    <!-- Rolls dice and updates h1 / images when the page loads -->
     <script src="./index.js" charset="utf-8"></script>
   </body>
 </html>

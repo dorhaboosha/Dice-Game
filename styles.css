@@ -1,37 +1,63 @@
+/*
+ * Dice Game — presentation layer for index.html
+ *
+ * Palette (rough guide)
+ *   #393E46 — page background (dark blue-gray)
+ *   #232931 — shadow / depth on the main title
+ *   #4ECCA3 — accent (headings, labels, dice column text)
+ *   #EEEEEE — footer text on dark background
+ *
+ * Typography (fonts are loaded in index.html)
+ *   Lobster      → h1 (game title / win message)
+ *   Indie Flower → player labels (p), footer
+ *
+ * Layout note
+ *   .dice uses inline-block so the two player columns sit side-by-side inside
+ *   the centered .container; img width is a percentage of each column.
+ */
+
+/* ----- Page canvas ----- */
+body {
+  background-color: #393E46;
+}
+
+/* ----- Main column: title + both dice, centered ----- */
 .container {
   width: 70%;
   margin: auto;
   text-align: center;
 }
 
+/* ----- One player’s block (label + dice image) ----- */
 .dice {
   text-align: center;
   display: inline-block;
 
 }
 
-body {
-  background-color: #393E46;
-}
-
+/* ----- “Refresh Me” / winner line ----- */
 h1 {
   margin: 30px;
   font-family: 'Lobster', cursive;
+  /* Slight horizontal offset reads as a drop shadow on large display type */
   text-shadow: 5px 0 #232931;
   font-size: 8rem;
   color: #4ECCA3;
 }
 
+/* ----- “Player 1” / “Player 2” captions ----- */
 p {
   font-size: 2rem;
   color: #4ECCA3;
   font-family: 'Indie Flower', cursive;
 }
 
+/* ----- Dice faces; % scales with each .dice column ----- */
 img {
   width: 80%;
 }
 
+/* ----- Attribution line below the game ----- */
 footer {
   margin-top: 5%;
   color: #EEEEEE;
